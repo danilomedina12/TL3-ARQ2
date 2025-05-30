@@ -12,7 +12,7 @@ String estado = "detener";
 
 // Función para invertir sentido de giro en ciertos canales
 bool esInvertido(uint8_t canal) {
-  return (canal == 0 || canal == 1 || canal == 5); 
+  return (canal == 1 || canal == 5); 
 }
 
 // Función que mueve un servo a un ángulo
