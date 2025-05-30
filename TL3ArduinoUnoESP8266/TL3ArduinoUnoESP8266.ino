@@ -203,7 +203,7 @@ void loop() {
 
     // Comandos de movimiento continuo
     if (cmd == "adelante" || cmd == "atras" || cmd == "izquierda" || cmd == "derecha" || cmd == "detener") {
-      estado = cmd;  // Solo guardás el estado si es un movimiento continuo
+      estado = cmd;  // Solo guardamos el estado si es un movimiento continuo
     }
 
     // Comandos de acción puntual
