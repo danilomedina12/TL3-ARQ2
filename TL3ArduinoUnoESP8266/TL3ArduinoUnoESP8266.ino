@@ -202,11 +202,14 @@ void loop() {
     cmd.toLowerCase();
 
     // Comandos de movimiento continuo
-    if (cmd == "adelante" || cmd == "atras" || cmd == "izquierda" || cmd == "derecha" || cmd == "detener") {
-      estado = cmd;  // Solo guardamos el estado si es un movimiento continuo
+    if (cmd == "adelante" || cmd == "atras" || cmd == "detener") {
+      estado = cmd;  // Solo se guarda el estado si es un movimiento continuo
     }
 
     // Comandos de acción puntual
+    else if (estado == "izquierda") girarIzquierda();
+    else if (estado == "derecha") girarDerecha();
+
     else if (cmd == "patita_derecha") darPatitaDerecha();
     else if (cmd == "patita_izquierda") darPatitaIzquierda();
     else if (cmd == "cabeza_izquierda") moverCabezaIzquierda();
@@ -216,8 +219,5 @@ void loop() {
   // Ejecutar continuamente el movimiento correspondiente
   if (estado == "adelante") moverAdelante();
   else if (estado == "atras") moverAtras();
-  else if (estado == "izquierda") girarIzquierda();
-  else if (estado == "derecha") girarDerecha();
   else if (estado == "detener") detener();
 }
-
