@@ -32,7 +32,6 @@ const char MAIN_page[] PROGMEM = R"=====(
     <button onclick="sendCommand('izquierda')">Izquierda</button>
     <button onclick="sendCommand('detener')">Detener</button>
     <button onclick="sendCommand('derecha')">Derecha</button><br>
-    <button onclick="sendCommand('atras')">Atrás</button>
   </div>
 
   <h2>Dar la patita</h2>
@@ -78,12 +77,7 @@ void setup() {
     Serial.println("adelante");
     server.send(200, "text/plain", "OK");
   });
-
-  server.on("/atras", []() {
-    Serial.println("atras");
-    server.send(200, "text/plain", "OK");
-  });
-
+  
   server.on("/izquierda", []() {
     Serial.println("izquierda");
     server.send(200, "text/plain", "OK");
