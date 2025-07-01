@@ -38,13 +38,14 @@ void setCanalAngulo(uint8_t canal, int angulo) {
 void ponerReposo(){
   setCanalAngulo(0, 90);   // Hombro trasero derecho
   setCanalAngulo(1, 80);   // Hombro trasero izquierdo
-  setCanalAngulo(2, 100);  // Rodilla trasera derecha
-  setCanalAngulo(3, 90);  // Rodilla trasera izquierda
-  setCanalAngulo(4, 90);   // Hombro delantera derecha
-  setCanalAngulo(5, 55);   // Hombro delantera izquierda
+  setCanalAngulo(2, 90);  // Rodilla trasera derecha
+  setCanalAngulo(3, 100);  // Rodilla trasera izquierda
+  setCanalAngulo(4, 100);   // Hombro delantera derecha
+  setCanalAngulo(5, 70);   // Hombro delantera izquierda
   setCanalAngulo(6, 70);  // Rodilla delantera derecha
   setCanalAngulo(7, 80);  // Rodilla delantera izquierda
 }
+
 
 
 // CAMINATA cuadrúpeda lenta corregida
@@ -144,10 +145,6 @@ void girarDerecha(){
   delay(200);
 }
 
-void detener() {
-  ponerReposo();
-}
-
 void darPatitaDerecha() {
   setCanalAngulo(4, 140);
   delay(300);
@@ -197,7 +194,7 @@ void loop() {
     String cmd = Serial.readStringUntil('\n');
     cmd.trim();
     cmd.toLowerCase();
-    if (cmd == "adelante" || cmd == "izquierda" || cmd == "derecha" ||
+    if (cmd == "adelante" || cmd == "detener" || cmd == "izquierda" || cmd == "derecha" ||
         cmd == "patita_derecha" || cmd == "patita_izquierda" ||
         cmd == "cabeza_derecha" || cmd == "cabeza_izquierda") {
       estado = cmd;
