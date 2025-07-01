@@ -136,7 +136,7 @@ void girarDerecha(){
 
   // 3. Apoyar patas
   setCanalAngulo(3, 90);  // rodilla trasera izquierda baja
-  setCanalAngulo(7, 70);  // rodilla delantera izquierda baja
+  setCanalAngulo(7, 80);  // rodilla delantera izquierda baja
   delay(300);
 
   // Paso B: mover hombros derechos hacia atrás para acompañar el giro
